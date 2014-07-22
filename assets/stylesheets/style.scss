@@ -1,0 +1,11 @@
+/* base libraries to get started */
+@import 'base/vendors/bootstrap';
+@import 'base/vendors/fontawesome';
+/* all mixins and variables for better code */
+@import 'variables';
+/* base libraries and css rules that applies to all projects, a collection of best practices */
+@import 'base';
+/* project-specific, design structure, frame */
+@import 'layout';
+/* project-specific modules (pagination, forms, tables, etc) */
+@import 'modules';

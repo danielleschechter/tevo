@@ -1,0 +1,25 @@
+@import "base/helper";
+@import "base/bootstrap";
+@import "base/modernizr";
+
+/* basic affordances */
+
+:focus {
+	outline-color: transparent;
+	outline-style: none;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+	transition: all 0.5s 0.1s ease; 
+	text-indent: -50%;
+	opacity: 0;
+}
+a {
+	@include transition;
+}
+h1, h2, h3, h4 {
+	$font-family: $font2;
+	font-weight: normal;
+}
+.hidden {
+	display: none;
+}

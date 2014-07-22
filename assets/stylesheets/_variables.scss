@@ -1,0 +1,38 @@
+/* brand variables */
+
+$font1: Arial, Helvetica;
+$font2: Arial, Helvetica;
+$g1: 10px;
+$c0: #22303f;
+$c1: #333;
+$c2: #add8e6;
+$c3: #db0d2a;
+$c4: #fff;
+$c5: #fff;
+
+/* status colors */
+
+$c_note: #44A95E;
+$c_error: #d95c5c;
+
+/* variations of core rules */
+
+@import "variables/variations";
+
+/* breakpoints */
+
+$ipad-all: 1024px;
+$ipad-portrait: 768px;
+$iphone-5: 568px;
+$iphone-all: 480px;
+$iphone-portrait: 320px;
+$header-logo: 220px;
+$header-logo-height: 70px;
+$header-buttons: 110px;
+
+/* generic libraries */
+
+@import "variables/extends";
+@import "variables/mixins";
+@import "variables/animation";
+@import "variables/colors";

@@ -1,0 +1,287 @@
+/* header rules */
+
+body {
+  margin-top: 75px;
+  .status {
+    display: none;
+  }
+  header.main {
+    height: 75px;
+  }
+  &.edit, &.preview {
+    margin-top: 95px;
+    .status {
+      display: block;
+    }
+    header.main {
+      height: 95px;
+    }
+  }
+}
+
+header {
+  &.main {
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: solid 1px $c2;
+    @include shadow($shadow: 0 3px 5px rgba(0,0,0,.1));
+    top: 0;
+    left: 0;
+    right: 0;
+    .logo {
+      @extend .col-md-1;
+      padding-left: 0px;
+      padding-top: 5px;
+      height: 75px;
+      background-image: url('../img/logo2.gif');
+      background-repeat: no-repeat;
+      background-position: center left;
+
+    }
+    .title {
+
+      padding-left: 0px;
+      @extend .col-md-5;
+
+    }
+    .actions {
+
+      @extend .col-md-6;
+      text-align: right;
+      padding-right: 0px;
+      .admin {
+
+        margin: 5px 0;
+        white-space: nowrap;
+      }
+      .dropdown {
+        display: inline-block;
+        a.dropdown-toggle {
+          @extend %reset-link;
+        }
+        .dropdown-menu {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+.gallery {
+  overflow-x: auto;
+  width: 487px;
+  padding-bottom: $g2;
+  overflow-y: hidden;
+  input[type="radio"] {
+    display: none !important;
+  }
+}
+#user-content {
+  display: none;
+}
+#system-content, #user-content {
+  margin-top: $g1;
+  select, .btn-group {
+    margin-top: $g1;
+  }
+}
+#color, #image {
+  margin-top: $g1;
+}
+
+fieldset .field .input .btn-toolbar .btn-group:not(:first-of-type) {
+  margin-top: 0px !important;
+}
+.asset-group {
+  border-top: dotted 1px $c2;
+  .gallery {
+    margin-top: $g1;
+  }
+}
+.status {
+  heighT: 20px;
+  padding-top: 1px;
+  overflow: hidden;
+  background-color: #ccc;
+  color: white;
+  font-size: 12px;
+  a[data-toggle="tooltip"], a[data-toggle="popover"] {
+    float: right;
+    i {
+      margin-right: 0px;
+      font-size: 15px;
+    }
+  }
+}
+.popover-content {
+  width: 150px;
+  color: $c1;
+}
+
+footer.footer {
+ padding-bottom: $g1;
+ padding-top: $g1;
+ .links {
+  @extend .breadcrumb;
+  float: right;
+  @extend %reset;
+  li:not(:first-of-type):before {
+    content: "| ";
+    color: $c2;
+  }
+  a {
+    @extend %reset-link;
+  }
+}
+}
+
+/* status */
+
+.status .container:before {
+  display: inline-block;
+}
+
+
+
+.testing {
+  .status {
+    background-color: $c1;
+    color: darken($c1, 20%);
+    .container:before {
+      content: "Testing";
+    }
+    a {
+      color: darken($c1, 20%);
+    }
+
+  }
+}
+
+.published {
+  .status {
+    background-color: $c2;
+    color: darken($c2, 20%);
+    .container:before {
+      content: "Published";
+    }
+    a {
+      color: darken($c2, 20%);
+    }
+
+  }
+}
+
+.archived {
+  .status {
+    background-color: lighten(gray, 10%);
+    color: darken(gray, 10%);
+    .container:before {
+      content: "Archived";
+    }
+    a {
+      color: darken(gray, 10%);
+    }
+
+  }
+}
+
+.modal.small {
+  .modal-dialog {
+    width: 400px; 
+  }
+  .modal-content {
+
+  }
+
+}
+
+/* input exceptions */
+.input {
+  .btn-toolbar {
+    margin-bottom: $g1;
+  }
+  &.permalink {
+    input {
+      margin-bottom: $g1;
+    }
+    p {
+      margin-bottom: 0px !important;
+    }
+  }
+  .fieldset {
+    &.asset-group {
+
+    }
+  }
+}
+
+th .dropdown-menu {
+  max-height: 230px;
+  overflow: auto;
+}
+
+.list {
+  tr {
+    th {
+      border-bottom: solid 1px $c2 !important;
+    }
+    td {
+      border-top: dotted 1px $c2 !important;
+    }
+   &.project {
+    td {
+      background-color: $c4;
+      &:first-of-type, &:nth-of-type(3) {
+        text-transform: uppercase;
+      }
+    }
+  }
+  &.testing {
+    td:nth-of-type(2) {
+    background-color: $c1;
+    &:before {
+      content: "Testing";
+    }
+  }
+
+}
+&.published {
+    td:nth-of-type(2) {
+    background-color: $c2;
+    &:before {
+      content: "Published";
+    }
+  }
+}
+&.archived {
+    td:nth-of-type(2) {
+    background-color: lighten(gray, 40%);
+    &:before {
+      content: "Archived";
+    }
+  }
+}
+}
+}
+
+.container .preview {
+  height: 633px;
+  margin: $g2 0;
+  background-image: url('../img/preview.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+td .dropdown-menu.pull-right {
+  text-align: left;
+}
+
+header .title {
+  p.sig {
+margin: 0;
+padding-top: 10px;
+  }
+  h1.dropdown {
+@extend %reset;
+  }
+}
